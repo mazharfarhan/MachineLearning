@@ -37,4 +37,8 @@ print "Training time", round(time.now() - t0), 's'
 prediction = clf.predict(features_test)
 print accuracy_score(prediction,labels_test)
 
-
+count = 0
+for i in prediction:
+    if i == 1:
+        count = count + 1
+print count
