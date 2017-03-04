@@ -42,11 +42,13 @@ def get_rolling_mean(values, window):
 def get_rolling_std(values, window):
     """Return rolling standard deviation of given values, using specified window size."""
     # TODO: Compute and return rolling standard deviation
-
+    return pd.rolling_std(values, window=window)
 
 def get_bollinger_bands(rm, rstd):
     """Return upper and lower Bollinger Bands."""
     # TODO: Compute upper_band and lower_band
+    upper_band = rm  + 2 * rstd
+    lower_band = rm - 2 * rstd
     return upper_band, lower_band
 
 
