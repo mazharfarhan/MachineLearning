@@ -33,3 +33,18 @@ def test_run():
     
     print daily_returns.kurtosis()
     
+def test_run2():
+    dates = pd.date_range('2009-01-01','2012-12-31')
+    
+    symbols = ['SPY', 'XOM']
+    df = get_data(symbols, dates)
+    plot_data(df)
+    
+    daily_returns = compute_daily_returns(df)
+    plot_data(daily_returns, title ="Daily_returns", ylabel="daily_returns")
+    
+    daily_returns['SPY'].hist(bin = 20, label = 'SPY')
+    daily_returns['XOM'].hist(bin = 20, label = 'XOM')
+    plt.legend(loc = 'upper right')    
+    
+    plt.show()
