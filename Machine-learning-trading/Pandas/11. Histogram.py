@@ -26,6 +26,10 @@ def test_run():
     mean = daily_returns['SPY'].mean()
     std = daily_returns['SPY'].std()
     
-    plt.axvline
+    plt.axvline(mean, color='w', linestyle ='dashed', linewidth = 2)
+    plt.axvline(std, color='r', linestyle='dashed', linewidth=2)
+    plt.axvline(-std, color='r', linestyle='dashed', linewidth=2)
     plt.show()
+    
+    print daily_returns.kurtosis()
     
